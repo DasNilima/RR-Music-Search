@@ -20,11 +20,12 @@ useEffect(() => {
         }
         });
 }, [search])
+
 return (
         <div>
         <SearchBar handleSearch={setSearch} />
             {message}
-        <Gallery songs={data}/>
+    <Gallery data={data} />
         </div>
     )
 }

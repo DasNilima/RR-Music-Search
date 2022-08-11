@@ -1,20 +1,18 @@
 import { useState } from 'react'
 
-export default function SearchBar(props) {
+const SearchBar = function(props) {
     let [searchTerm, setSearchTerm] = useState("")
     
     let handleSubmit = (event) => {
         event.preventDefault()
         props.handleSearch(searchTerm)
     }
-    
-    let handleChange = (event) => {
-        setSearchTerm(event.target.value)
-    }
     return (
-            <form onSubmit = {handleSubmit}>
-                    <input type="text" value={searchTerm} onChange={handleChange} />
-                    <button type="submit">search</button>
-                </form>
-            )
-        }
+        <form onSubmit={handleSubmit}>
+        <input type="text" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} />
+        <button type='submit'>Search</button>
+    </form>
+)   
+}
+
+export default SearchBar

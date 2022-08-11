@@ -1,8 +1,8 @@
 import GalleryItem from './GalleryItem'
 
 const Gallery = function(props) {
-    let galleryItems = props.songs.map ((song, i ) => {
-        return <GalleryItem songTitle={song.trackName} artist={song.artistName} />
+    let galleryItems = props.data.map ((item, i ) => {
+        return <GalleryItem key={i} item={item} />
     })
     return (
         <div>
